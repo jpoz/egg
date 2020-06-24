@@ -1,4 +1,4 @@
-module github.com/jpoz/wrap
+module github.com/jpoz/egg
 
 go 1.14
 

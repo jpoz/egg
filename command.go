@@ -1,4 +1,4 @@
-package wrap
+package egg
 
 import (
 	"errors"
@@ -14,7 +14,7 @@ import (
 	"github.com/gen2brain/beeep"
 )
 
-// Command contains the current command run by wrap
+// Command contains the current command run by egg
 type Command struct {
 	Arguments []string
 
@@ -62,7 +62,7 @@ func (c *Command) Run() error {
 	return c.err
 }
 
-// AnnounceIntent prints out what wrap is about to run + workingDir
+// AnnounceIntent prints out what egg is about to run + workingDir
 func (c *Command) AnnounceIntent() {
 	fmt.Printf("📣 [%s] %s\n", c.workingDir(), strings.Join(c.Arguments, " "))
 }
