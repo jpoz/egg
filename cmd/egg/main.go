@@ -4,12 +4,12 @@ import (
 	"log"
 	"os"
 
-	"github.com/jpoz/wrap"
+	"github.com/jpoz/egg"
 )
 
 func main() {
 	arguments := os.Args[1:]
-	cmd, err := wrap.NewCommand(arguments)
+	cmd, err := egg.NewCommand(arguments)
 	if err != nil {
 		log.Fatalf("‼️  %s", err)
 	}
