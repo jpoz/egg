@@ -1,17 +1,19 @@
-# wrap
+# Egg
 
-A simple command wrapper that give a notification when the command is completed
+An egg timer for your commands.
+
+Prepend a command with `egg` and you'll get a system notification when its done.
 
 ## Installation
 
 ```shell
-go get -u github.com/jpoz/wrap/cmd/wrap
+go get -u github.com/jpoz/egg/cmd/egg
 ```
 
 ## Usage
 
 ```shell
-wrap sleep 2
+egg sleep 2
 ```
 
 ### Result:
