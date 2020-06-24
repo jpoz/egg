@@ -2,6 +2,13 @@
 
 A simple command wrapper that give a notification when the command is completed
 
+## Installation
+
+```shell
+go get -u github.com/jpoz/wrap/cmd/wrap
+```
+
+## Usage
 
 ```shell
 wrap sleep 2
