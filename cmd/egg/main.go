@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -15,7 +16,11 @@ func main() {
 	}
 
 	cmd.AnnounceIntent()
-	cmd.Run()
+	err = cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	cmd.NotifyStatus()
 
 	// TODO make this configurable
