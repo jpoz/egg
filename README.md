@@ -1,5 +1,7 @@
 # Egg
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/jpoz/egg)](https://goreportcard.com/report/github.com/jpoz/egg)
+
 An egg timer for your commands.
 
 Prepend a command with `egg` and you'll get a system notification when its done.
