@@ -1,11 +1,14 @@
 .PHONEY: test_ls
 
+.DEFAULT_GOAL := clean_egg
+
+egg:
+	go build -o egg cmd/egg/main.go
 
 clean:
 	rm -f egg
 
-egg:
-	go build -o egg cmd/egg/main.go
+clean_egg: clean egg
 
 test_ls: egg
 	./egg ls -al
