@@ -3,6 +3,7 @@
 .DEFAULT_GOAL := clean_egg
 
 egg:
+	go-bindata -pkg egg -o sounds.go sounds/
 	go build -o egg cmd/egg/main.go
 
 clean:

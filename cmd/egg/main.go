@@ -18,5 +18,11 @@ func main() {
 	cmd.Run()
 	cmd.NotifyStatus()
 
+	// TODO make this configurable
+	err = cmd.PlaySound()
+	if err != nil {
+		log.Fatalf("‼️  %s", err)
+	}
+
 	os.Exit(cmd.ExitCode())
 }

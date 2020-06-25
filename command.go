@@ -1,8 +1,10 @@
 package egg
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"os/exec"
@@ -12,7 +14,12 @@ import (
 	"time"
 
 	"github.com/gen2brain/beeep"
+	"github.com/hajimehoshi/go-mp3"
+	"github.com/hajimehoshi/oto"
 )
+
+const SUCCESS_SOUND = "sounds/success.mp3"
+const ERROR_SOUND = "sounds/error.mp3"
 
 // Command contains the current command run by egg
 type Command struct {
@@ -84,6 +91,41 @@ func (c *Command) NotifyStatus() {
 			"na",
 		)
 	}
+}
+
+// PlaySound will play either the error or success sound
+func (c *Command) PlaySound() error {
+
+	if c.ran {
+		sound := SUCCESS_SOUND
+		if c.err != nil {
+			sound = ERROR_SOUND
+		}
+		a, err := Asset(sound)
+		if err != nil {
+			return err
+		}
+		r := bytes.NewReader(a)
+		d, err := mp3.NewDecoder(r)
+		if err != nil {
+			return err
+		}
+
+		ctx, err := oto.NewContext(d.SampleRate(), 2, 2, 8192)
+		if err != nil {
+			return err
+		}
+		defer ctx.Close()
+
+		p := ctx.NewPlayer()
+		defer p.Close()
+
+		if _, err := io.Copy(p, d); err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
 
 // ExitCode will return the code the command returned
