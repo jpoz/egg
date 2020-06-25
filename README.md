@@ -1,5 +1,6 @@
 # Egg
 
+[![GoDoc](https://godoc.org/github.com/jpoz/egg?status.svg)](https://godoc.org/github.com/jpoz/egg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jpoz/egg)](https://goreportcard.com/report/github.com/jpoz/egg)
 
 An egg timer for your commands.
