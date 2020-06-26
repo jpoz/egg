@@ -7,7 +7,7 @@ An egg timer for your commands.
 
 Prepend a command with `egg` and you'll get a system notification when its done.
 
-![egg](https://user-images.githubusercontent.com/12866/85807053-98882480-b705-11ea-8c29-83fa5dbb9b50.gif)
+![egg](https://user-images.githubusercontent.com/12866/85807343-7c38b780-b706-11ea-9144-91f96994a4ad.gif)
 
 ## Installation
 
