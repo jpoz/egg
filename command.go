@@ -18,8 +18,8 @@ import (
 	"github.com/hajimehoshi/oto"
 )
 
-const SUCCESS_SOUND = "sounds/success.mp3"
-const ERROR_SOUND = "sounds/error.mp3"
+const successSound = "sounds/success.mp3"
+const errorSound = "sounds/error.mp3"
 
 // Command contains the current command run by egg
 type Command struct {
@@ -97,9 +97,9 @@ func (c *Command) NotifyStatus() {
 func (c *Command) PlaySound() error {
 
 	if c.ran {
-		sound := SUCCESS_SOUND
+		sound := successSound
 		if c.err != nil {
-			sound = ERROR_SOUND
+			sound = errorSound
 		}
 		a, err := Asset(sound)
 		if err != nil {
