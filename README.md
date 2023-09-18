@@ -12,7 +12,7 @@ Prepend a command with `egg` and you'll get a system notification when its done.
 ## Installation
 
 ```shell
-go get -u github.com/jpoz/egg/cmd/egg
+go install github.com/jpoz/egg/cmd/egg@latest
 ```
 
 ## Usage
