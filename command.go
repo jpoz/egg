@@ -82,7 +82,7 @@ func (c *Command) NotifyStatus() {
 		resultText := "completed"
 		if c.err != nil {
 			resultIcon = "❌"
-			resultText = fmt.Sprintf("exitied with code %d", c.ExitCode())
+			resultText = fmt.Sprintf("exited with code %d", c.ExitCode())
 		}
 
 		beeep.Notify(
